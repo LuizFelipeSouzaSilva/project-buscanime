@@ -1,0 +1,37 @@
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+a {
+    color: white;
+    text-decoration: none;
+    background-color: #6324C6;
+    border: none;
+    padding: 7px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+.filters button {
+    color: #6324C6;
+    background: white;
+    border: 1px solid #6324C6;
+    padding: 7px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+  
+.filters button:hover {
+    background-color: #6324C6;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
