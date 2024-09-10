@@ -18,6 +18,7 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  height: 290px;
 }
 
 .animeImage {
@@ -76,5 +77,18 @@
   display: inline-block;
 }
 
+.buttonMais {
+  margin-top: 20px;
+}
 
-
+.buttonMais button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #FFB800;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
