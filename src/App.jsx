@@ -1,9 +1,11 @@
 import { Filters } from './components/filters'
 import { Header } from './components/header'
 import { Search } from './components/search'
+import { Footer } from './components/footer'
 
 import styles from './App.module.css'
 import './global.css'
+
 
 const AnimeCard = ({ title, genres, averageScore, imageUrl }) => {
   const getScoreColor = (score) => {
@@ -118,7 +120,6 @@ export function App() {
         <Header/>
         <Filters/>
         <Search/>
-
         <div className={styles.backGround}>
           <div className={styles.fundo}>
           <div className={styles.animeGrid}>
@@ -133,13 +134,14 @@ export function App() {
             ))}
           </div>
           </div>
+        <div className={styles.buttonMais}>
+          <button> + Ver mais </button>
         </div>
+        </div>
+
+        <Footer/>
        </div>
-     
-
-
-        
-
+    
   )
 }
 
