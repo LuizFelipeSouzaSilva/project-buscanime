@@ -24,7 +24,6 @@ const AnimeCard = ({ title, genres, averageScore, imageUrl }) => {
             <span key={index} className={styles.animeGenre}>{genre}</span>
           ))}
         </div>
-        <div className={styles.scoreLeft}>
         <div
           className={styles.animeScore}
           style={{ backgroundColor: getScoreColor(averageScore) }}
@@ -33,7 +32,6 @@ const AnimeCard = ({ title, genres, averageScore, imageUrl }) => {
         </div>
         </div>
       </div>
-    </div>
   );
 };
 

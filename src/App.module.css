@@ -22,10 +22,7 @@
 
 .animeImage {
   width: 100%;
-  height: 300px;
-  display: block;
-  overflow: hidden;
-  background-image: center;
+  height: 400px;
 }
 
 .animeOverlay {
@@ -40,17 +37,17 @@
 
 .animeInfo {
   padding: 25px;
-  margin-top: -160px;
+  margin-top: -170px;
   position: relative;
   z-index: 2; 
 }
 
 .animeTitle {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 5px;
   color: white;
-  margin-top: -130px;
+  margin-top: -235px;
 }
 
 .animeGenres {
@@ -73,16 +70,11 @@
   padding: 6px 9px;
   border-radius: 5px;
   width: fit-content;
-  position: relative;
+  position: absolute;
+  bottom: 10px;
+  right: 10px; 
   display: inline-block;
 }
 
-.scoreLeft{
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin-left: auto;
-  margin-top: 100px;
-}
+
+
