@@ -2,6 +2,8 @@ import { Filters } from './components/filters'
 import { Header } from './components/header'
 import { Search } from './components/search'
 import { Footer } from './components/footer'
+import React, { useState, useEffect } from 'react';
+
 
 import styles from './App.module.css'
 import './global.css'
@@ -37,8 +39,31 @@ const AnimeCard = ({ title, genres, averageScore, imageUrl }) => {
   );
 };
 
-
 export function App() {
+
+  const [searchText, setSearchText] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    const handleSpacePress = (event) => {
+      if (event.code === 'Space') {
+        event.preventDefault();
+      }
+    };
+    window.addEventListener('keydown', handleSpacePress);
+    return () => {
+      window.removeEventListener('keydown', handleSpacePress);
+    };
+  }, []);
+
+  const handleSearchChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
+  const handleSearchClick = () => {
+    setSearchQuery(searchText);
+  };
+
 
   const animes = [
     {
@@ -115,32 +140,36 @@ export function App() {
     },
   ];
 
-  return (
-        <div>
-        <Header/>
-        <Filters/>
-        <Search/>
-        <div className={styles.backGround}>
-          <div className={styles.fundo}>
-          <div className={styles.animeGrid}>
-            {animes.map((anime, index) => (
-              <AnimeCard
-                key={index}
-                title={anime.title}
-                genres={anime.genres}
-                averageScore={anime.averageScore}
-                imageUrl={anime.imageUrl}
-              />
-            ))}
-          </div>
-          </div>
-        <div className={styles.buttonMais}>
-          <button> + Ver mais </button>
-        </div>
-        </div>
+ const filteredAnimes = animes.filter(anime =>
+    anime.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-        <Footer/>
-       </div>
+  return (
+    
+    <div className={styles.wrapper}>
+    <Header />
+    <Filters />
+    <Search onSearchChange={handleSearchChange} onSearchClick={handleSearchClick}  />
+    <div className={styles.backGround}>
+      <div className={styles.fundo}>
+        <div className={styles.animeGrid}>
+          {filteredAnimes.map((anime, index) => (
+            <AnimeCard
+              key={index}
+              title={anime.title}
+              genres={anime.genres}
+              averageScore={anime.averageScore}
+              imageUrl={anime.imageUrl}
+            />
+          ))}
+        </div>
+      </div>
+      <div className={styles.buttonMais}>
+        <button> + Ver mais </button>
+      </div>
+    </div>
+    <Footer />
+  </div>
     
   )
 }
