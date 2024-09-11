@@ -92,3 +92,14 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+@media (max-width: 760px) {
+
+  html {
+      font-size: 87.5%;
+  }
+
+  .animeGrid {
+      grid-template-columns: repeat(2, 1fr)
+  }
+}
